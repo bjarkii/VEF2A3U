@@ -7,18 +7,6 @@
   <head>
     <title>VEFA3 <?php echo "- {$title}"; ?></title>
     <meta charset="utf-8">
-
-
-    <!-- VALIDATION -->
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
-    <script src="scripts/validate.js"></script>
-
-    <!-- GOOGLE CAPTCHA -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-
-
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
     <!-- PURE CSS -->
@@ -32,6 +20,11 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 
+    <style type="text/css">
+      #commentForm { width: 500px; }
+      #commentForm label { width: 250px; }
+      #commentForm label.error, #commentForm input.submit { margin-left: 253px; }
+    </style>
 
   </head>
 
@@ -55,20 +48,20 @@
 
     <div class="login-form">
 
-      <form class="pure-form pure-g" method="post" action="register-input.php" id="register">
+      <form class="pure-form pure-g" method="post" action="register-input.php">
 
         <fieldset>
 
             <div class="form-padding pure-u-1-3">
                 <div class="form-input">
-                  <p>Fornafn</p>
-                  <input name="fornafn" type="text" placeholder="Fornafn">
+                  <p>Fornafn*</p>
+                  <input name="fornafn" type="text" placeholder="Fornafn" required>
                 </div>
             </div>
 
             <div class="form-padding pure-u-1-3">
                 <div class="form-input">
-                  <p>Eftirnafn</p>
+                  <p>Eftirnafn*</p>
                   <input name="eftirnafn" type="text" placeholder="Eftirnafn">
                 </div>
             </div>
@@ -84,7 +77,7 @@
 
             <div class="form-padding pure-u-1-2">
                 <div class="form-input">
-                  <p>Netfang</p>
+                  <p>Netfang*</p>
                   <input name="email" type="email" placeholder="Netfang">
                 </div>
             </div>
@@ -96,14 +89,14 @@
             
             <div class="form-padding pure-u-1-2">
                 <div class="form-input">
-                  <p>Lykilorð</p>
-                  <input id="lykilord" name="lykilord" type="password" placeholder="Lykilorð">
+                  <p>Lykilorð*</p>
+                  <input name="lykilord" type="password" placeholder="Lykilorð">
                 </div>
             </div>
 
             <div class="form-padding pure-u-1-2">
                 <div class="form-input">
-                  <p>Staðfesta lykilorð</p>
+                  <p>Staðfesta lykilorð*</p>
                   <input name="lykilordMatch" type="password" placeholder="Endurtaktu lykilorð">
                 </div>
             </div>
@@ -128,12 +121,6 @@
             <div class="form-padding form-info pure-u-1-2">
                 <h3>Spurning</h3>
                 <p>Ef að þú gleymir lykilorðinu þá sendum við þér email með þessari spurningu.</p>
-            </div>
-
-            <hr>
-
-            <div class="pure-u-1-2 form-padding">
-                <div class="g-recaptcha" data-sitekey="6LeC0hgTAAAAAIueNzfY9se7j1_MyPMvyxZoxXBX" name="captcha"></div>
             </div>
 
             <div class="form-input pure-u-1">

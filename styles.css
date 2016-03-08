@@ -231,7 +231,7 @@ footer
 
 .form-input input[type=email], .form-input input[type=password], .form-input input[type=text], .form-input option
 {
-	padding: 27px;
+	padding: 20px;
 	width: 100%;
 	margin-bottom: 20px;
 	font-size: 17px;
@@ -312,3 +312,18 @@ footer
 	background-color: yellow;
 }
 
+
+
+/* PROFILE --------- */
+
+.upload-file
+{
+	padding: 50px;
+}
+
+.upload-file input[type="file"]
+{
+	padding: 100px;
+	border: 2px dotted #ccc;
+	background-color: transparent;
+}
